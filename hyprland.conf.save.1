@@ -18,6 +18,7 @@ exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 # authenti
 exec-once = wpaperd # wallpaper daemon
 exec-once = waybar # status bar
 exec-once = mako # notification daemon
+exec-once = nm-applet --indicator # network manager tray icon
 exec-once = blueman-applet # bluetooth tray icon
 exec-once = copyq # clipboard manager
 exec-once = ~/.config/hypr/scripts/sleep.sh # sleep watcher script
@@ -29,10 +30,10 @@ exec-once = apply-gsettings # apply gtk settings
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 $mainMod = SUPER
 $lock = hyprlock
-$browser = librewolf
-$terminal = alacritty
+$browser = vivaldi
+$terminal = foot
 $music = tidal
-$fileManager = thunar
+$fileManager = dolphin
 
 # -----------------------------------------------------
 # Input
@@ -152,7 +153,7 @@ layerrule = ignorezero, waybar
 # System & Apps
 bind = $mainMod SHIFT, R, exec, hyprctl reload # Reload Hyprland
 bind = $mainMod, L, exec, $lock # Lock screen
-bind = $mainMod SHIFT, E, exec, nwg-bar
+bind = $mainMod SHIFT, E, exit, # Exit Hyprland (logout)
 bind = $mainMod, T, exec, $terminal # Open terminal
 bind = $mainMod, N, exec, $fileManager # Open file manager
 bind = $mainMod, D, exec, wofi --show drun --allow-images # App launcher
@@ -284,4 +285,3 @@ bind = $mainMod, F9, exec,
 bind = $mainMod, F10, exec,
 bind = $mainMod, F11, exec,
 bind = $mainMod, F12, exec,
-
