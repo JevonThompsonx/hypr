@@ -36,7 +36,6 @@ $fileManager = thunar
 $browser = brave --enable-features=UseOzonePlatform --ozone-platform=wayland
 $messenger = env GDK_SCALE=1 signal-desktop --ozone-platform=wayland --enable-features=UseOzonePlatform
 $webapp = $browser --force-device-scale-factor=1 --high-dpi-support=1 --app
-$obsidian = obsidian --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland
 
 # Basic variables
 $mod = SUPER
@@ -46,9 +45,6 @@ env = XCURSOR_THEME,Bibata-Modern-Ice
 env = HYPRCURSOR_THEME,Bibata-Modern-Ice
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
-
-# Electron/Chromium apps - force Wayland for crisp rendering
-env = ELECTRON_OZONE_PLATFORM_HINT,wayland
 
 # Prefer dark themes on all gnome apps
 exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -70,26 +66,12 @@ exec = $HOME/.local/share/archriot/install/archriot --help-binds-generate
 
 # ========================= WINDOW RULES =======================
 # Window rules
-#windowrule = scrolltouchpad 1.5, class:^(com.mitchellh.ghostty)$
+windowrule = scrolltouchpad 1.5, class:^(com.mitchellh.ghostty)$
 windowrulev2 = float, class:^(org\.pulseaudio\.pavucontrol)$
 windowrulev2 = size 800 85%, class:^(org\.pulseaudio\.pavucontrol)$
 windowrulev2 = center, class:^(org\.pulseaudio\.pavucontrol)$
 windowrulev2 = float, class:^(blueberry.py)$
 windowrulev2 = float, class:^(org.gnome.Calculator)$
-
-# =============================================================
-# OBSIDIAN - Crisp rendering, no opacity effects
-# =============================================================
-windowrulev2 = opacity 1.0 1.0, class:^(obsidian)$
-windowrulev2 = noblur, class:^(obsidian)$
-
-# =============================================================
-# BRAVE BROWSER - Crisp rendering, disable opacity/blur
-# =============================================================
-windowrulev2 = opacity 1.0 1.0, class:^(brave-browser)$
-windowrulev2 = noblur, class:^(brave-browser)$
-windowrulev2 = opacity 1.0 1.0, class:^(brave-.*)$
-windowrulev2 = noblur, class:^(brave-.*)$
 
 # X (Twitter) window rules
 windowrulev2 = float, class:^(brave-x\.com.*)$
@@ -257,7 +239,6 @@ windowrulev2 = size 900 80%, class:^(com.mitchellh.ghostty-floating)$
 windowrulev2 = size 52% 85%, floating:1, class:^(brave-.*)$
 
 # Subtle window transparency (98% opacity, 2% background visible)
-# NOTE: Brave and Obsidian excluded above for crisp text
 windowrulev2 = opacity 0.96 0.94, class:^(com.mitchellh.ghostty)$
 windowrulev2 = opacity 0.96 0.94, class:^(com.mitchellh.ghostty-floating)$
 windowrulev2 = opacity 0.96 0.94, class:^(foot)$
@@ -410,8 +391,7 @@ bind = $mod, N, exec, $terminal -e nvim                                        #
 bind = $mod, T, exec, $terminal --title=btop -e btop                           # System Monitor
 bind = $mod, G, exec, sh -lc 'notify-send -t 2000 "Telegram" "Opening Telegram..." >/dev/null 2>&1; Telegram'  # Telegram
 bind = $mod, S, exec, $HOME/.local/share/archriot/install/archriot --signal    # Signal
-bind = $mod, O, exec, $obsidian                                                # Obsidian
-bind = $mod SHIFT, O, exec, gnome-text-editor                                  # Text Editor
+bind = $mod, O, exec, gnome-text-editor                                        # Text Editor
 bind = $mod, C, exec, $HOME/.local/share/archriot/config/bin/archriot-control-panel    # Control Panel
 bind = $mod, Z, exec, zeditor                                                  # Zed
 bind = $mod, R, exec, $HOME/.local/share/archriot/install/archriot --wallet    # Wallet
