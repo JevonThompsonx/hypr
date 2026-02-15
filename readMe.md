@@ -50,6 +50,9 @@ sudo zypper install \
 ```
 
 > If a package name differs on your distro, search with your package manager and install the equivalent package.
+> This config expects a Nerd Font (Hack Nerd Font recommended) for icon glyphs in lockscreen/bar apps.
+> On openSUSE, `symbols-only-nerd-fonts` is usually enough for glyphs; install full Hack Nerd Font if you want full font coverage.
+> If your distro does not package Hack Nerd Font directly, download `Hack.zip` from https://www.nerdfonts.com/font-downloads and install at least `HackNerdFont-Regular.ttf`.
 
 ## Optional apps referenced by keybinds
 
