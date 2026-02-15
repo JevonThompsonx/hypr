@@ -1,35 +1,45 @@
-# Install linux
-Install linux using garuda hyprland for base config
+# Hyprland Config Setup
 
-# Install these
-A list of all the programs to install on my garuda hyprland config
+Install these packages first so this config works across desktops and laptops.
 
+## Core packages (required)
+
+### Arch / Endeavour / Garuda
+```bash
+sudo pacman -S hyprland hyprlock hypridle xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar mako fuzzel nwg-drawer alacritty thunar pavucontrol playerctl hyprshot hyprpicker wl-clipboard brightnessctl grim slurp ttf-hack-nerd noto-fonts-emoji
 ```
-sudo pacman -S yay github-desktop spotify spicetify-cli vivaldi neovim nodejs zoxide fastfetch eza rofimoji fish wpaperd mako nwg-bar nwg-drawer github-cli
+
+### Debian / Ubuntu
+```bash
+sudo apt update
+sudo apt install hyprland hyprlock hypridle xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar mako-notifier fuzzel nwg-drawer alacritty thunar pavucontrol playerctl hyprshot hyprpicker wl-clipboard brightnessctl grim slurp fonts-hack fonts-noto-color-emoji
 ```
 
-Some of these will already be installed by garuda linux 
+### Fedora
+```bash
+sudo dnf install hyprland hyprlock hypridle xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar mako fuzzel nwg-drawer alacritty thunar pavucontrol playerctl hyprshot hyprpicker wl-clipboard brightnessctl grim slurp google-noto-emoji-fonts
+```
 
-# Customize
-Use gh cli tool to download custom configs for: 
-1. fastfetch
-2. neovim
-3. fish
-4. wpaperd
-5. mako
-6. nwg-bar
-7. nwg-drawer
-8. waybar
-9. alacritty
+### openSUSE Tumbleweed
+```bash
+sudo zypper install hyprland hyprlock hypridle xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar mako fuzzel nwg-drawer alacritty thunar pavucontrol playerctl hyprshot hyprpicker wl-clipboard brightnessctl grim slurp
+```
 
-A script to download the configs is in `script` labeled `cloneConfigs.sh`
-Download into config file
+> If a package name differs on your distro, search with your package manager and install the equivalent package.
 
-# Download WPs
+## Optional apps referenced by keybinds
 
-The config script also clones wallpapers
+```bash
+brave obsidian signal-desktop telegram-desktop zed
+```
 
-# Project folder
-Install personal projects in folder "Projects"
+## Customization
 
+Use the clone helper script:
+
+```bash
+./scripts/cloneConfigs.sh
+```
+
+This script clones app configs and wallpapers.
 
