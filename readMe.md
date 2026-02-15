@@ -35,7 +35,7 @@ sudo dnf install \
   waybar mako fuzzel nwg-drawer \
   alacritty thunar pavucontrol playerctl \
   hyprshot hyprpicker wl-clipboard brightnessctl grim slurp \
-  google-noto-emoji-fonts
+  google-noto-color-emoji-fonts
 ```
 
 ### openSUSE Tumbleweed
